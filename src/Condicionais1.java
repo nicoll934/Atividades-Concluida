@@ -1,4 +1,4 @@
-public class Condicionais {
+public class Condicionais1 {
     public static void main(String[] args) {
         /// Resultado dos alunos 1
         double notasAlunos = (5.0 + 8.0 + 6.0 + 7.0) / 4.0;
