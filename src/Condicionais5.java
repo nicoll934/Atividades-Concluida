@@ -1,7 +1,7 @@
 public class Condicionais5 {
     public static void main(String[] args) {
 
-        double SALARIO = 3800;
+        double SALARIO = 2000;
         double valorInss;
 
         double FAIXA_1 = 0.075;
@@ -14,24 +14,24 @@ public class Condicionais5 {
         double _FAIXAA_3 = 3641.03;
         double _FAIXAA_4 = 7087.22;
 
-        double CONTRIBUICAO_MAXIMA_FAIXA_1 = _FAIXAA_1 * FAIXA_1;
-        double CONTRIBUICAO_MAXIMA_FAIXA_2 = (_FAIXAA_2 - _FAIXAA_1) * FAIXA_2 +
-                CONTRIBUICAO_MAXIMA_FAIXA_1;
-        double CONTRIBUICAO_MAXIMA_FAIXA_3 = (_FAIXAA_3 - _FAIXAA_2) * FAIXA_3 +
-                CONTRIBUICAO_MAXIMA_FAIXA_2;
-        double CONTRIBUICAO_MAXIMA = (_FAIXAA_4 - _FAIXAA_3) * FAIXA_4 +
-                CONTRIBUICAO_MAXIMA_FAIXA_3;
+        double MAXIMA_FAIXA_1 = _FAIXAA_1 * FAIXA_1;
+        double MAXIMA_FAIXA_2 = (_FAIXAA_2 - _FAIXAA_1) * FAIXA_2 +
+                MAXIMA_FAIXA_1;
+        double MAXIMA_FAIXA_3 = (_FAIXAA_3 - _FAIXAA_2) * FAIXA_3 +
+                MAXIMA_FAIXA_2;
+        double MAXIMA = (_FAIXAA_4 - _FAIXAA_3) * FAIXA_4 +
+                MAXIMA_FAIXA_3;
 
         if (SALARIO <= _FAIXAA_1) {
             valorInss = SALARIO * FAIXA_1;
         } else if (SALARIO <= _FAIXAA_2) {
-            valorInss = (SALARIO - _FAIXAA_1) * FAIXA_2 + CONTRIBUICAO_MAXIMA_FAIXA_1;
+            valorInss = (SALARIO - _FAIXAA_1) * FAIXA_2 + MAXIMA_FAIXA_1;
         } else if (SALARIO <= _FAIXAA_3) {
-            valorInss = (SALARIO - _FAIXAA_2) * FAIXA_3 + CONTRIBUICAO_MAXIMA_FAIXA_2;
+            valorInss = (SALARIO - _FAIXAA_2) * FAIXA_3 + MAXIMA_FAIXA_2;
         } else if (SALARIO <= _FAIXAA_4) {
-            valorInss = (SALARIO - _FAIXAA_3) * FAIXA_4 + CONTRIBUICAO_MAXIMA_FAIXA_3;
+            valorInss = (SALARIO - _FAIXAA_3) * FAIXA_4 + MAXIMA_FAIXA_3;
         } else {
-            valorInss = CONTRIBUICAO_MAXIMA;
+            valorInss = MAXIMA;
         }
 
         System.out.printf("O salário bruto informado foi %.2f reais.\n", SALARIO);
